@@ -1,0 +1,47 @@
+----   CONFIG ---
+
+git config --global user.name "w3schools-test"
+git config --global user.email "test@w3schools.com"
+
+
+mkdir myproject
+cd myproject
+
+git init 
+
+
+
+
+------ ACCIONES -----
+
+
+git ls -> muestra contenido del directorio
+
+git status  -> ve lo que hay por subir y sin subir
+git status --short
+
+git add index.html  -> añade cosas al commit
+
+git rm index.html  -> quita cosas al commit
+
+git add --all  -> añade todo al commit
+
+git commit -m "First release of Hello World!"  -> Hace commit con mensaje
+
+git log  ->muestra los commit hechos
+
+
+---- NUEVAS RAMAS ---
+
+git branch hello-world-images  -> crea rama nueva
+
+git branch   -> muestra las ramas existentes
+
+git checkout hello-world-images  -> cambiar de una rama a otra
+
+git merge emergency-fix    -> FUSIONA la rama actual con la selecionada
+
+---- AYUDA----
+
+git command -help -  See all the available options for the specific command
+git help --all -  See all possible commands

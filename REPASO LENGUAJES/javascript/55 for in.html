@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript For In Loop</h2>
+<p>The for in statement loops through the properties of an object:</p>
+
+<p id="demo"></p>
+<p id="demo2"></p>
+
+<script>
+const person = {fname:"John", lname:"Doe", age:25}; 
+
+let txt = "";
+for (let x in person) {
+  txt += person[x] + " ";
+}
+
+document.getElementById("demo").innerHTML = txt;
+document.getElementById("demo2").innerHTML = typeof txt;
+</script>
+
+
+<p>
+  En cada interación, está sumando strings al valor de txt, en el primero hace que txt valga person posicion 0 que es John,
+  en la segunda suma el String John a el valor de person posicion 1 que es Doe. En la tercera igual pero al sumar String + Number se convierte en String. Finalmente escribe en Demo el valor de txt que ahora tras 3 iteracciones queda . John Doe 25 (recordar que también añadía un espacio en blanco en el código en cada iteración)
+</p>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Using The id Attribute in JavaScript</h2>
+<p>JavaScript can access an element with a specified id by using the getElementById() method:</p>
+
+<h1 id="myHeader">Hello World!</h1>
+<button onclick="displayResult()">Change text</button>
+
+<script>
+function displayResult() {
+  document.getElementById("myHeader").innerHTML = "Have a nice day!";
+}
+</script>
+
+
+<!-- 
+Al hacer click llama a la función
+la función coge los elementos por ID con el ID myHeader , luego
+aplica la función de JS .innerHTML = con lo que iguala un texto html a otro, en este caso: Have a nice day!, con lo cual, está
+finalmente transformando el texto en otro cuando se hace click en
+el botón que llama la función.
+
+-->
+</body>
+</html>

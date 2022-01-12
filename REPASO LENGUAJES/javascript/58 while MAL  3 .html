@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript While Loop</h2>
+
+<p id="demo"></p>
+
+<script>
+let sumatorio;
+let i = 0;
+while (i < 10) {
+  sumatorio = i
+  i++;
+}
+document.getElementById("demo").innerHTML = sumatorio;
+</script>
+
+<!-- Los suma como strings -->
+<!--
+
+Al no declarar la variable sumatorio con un valor nulo, y darle un valor númerico en el bucle, en cada iteración el valor de sumatorio es numérico y se va incrementando y a la hora de escribir solo se ve el último resultado. 
+
+Era solo para probar como iba y por qué antes no se chafaban
+los resultados, primero por el br y porque era tipo string y 
+al quitar el br se queda pegado pero se une a la string, lueg
+al quitar el texto sigue siendo string porque añade palabras
+y luego sigue siendo string porque el valor nulo con el que se 
+declaraba let text era string. (comillas)
+
+  -->
+
+</body>
+</html>

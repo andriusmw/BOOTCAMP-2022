@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript For In</h2>
+<p>The for in statement can loops over array values:</p>
+
+<p id="demo"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<p id="demo4"></p>
+
+<script>
+const numbers = [45, 4, 9, 16, 25];
+
+let txt = "";
+for (let x in numbers) {
+  txt += numbers[x] + "<br>"; 
+}
+
+document.getElementById("demo").innerHTML = txt; 
+  //contenido del array -> 45 4 9 16 25 
+document.getElementById("demo2").innerHTML = typeof txt ;
+  // tipo de objeto de txt tras escribir el array -> String
+document.getElementById("demo3").innerHTML = typeof numbers;
+  // tipo de objeto del array -> object
+document.getElementById("demo4").innerHTML = typeof numbers[0];
+  // tipo de objeto del contenido de cada índice del array -> number
+
+
+</script>
+
+<!-- ¿por qué al sumar number con number sale string?
+    debe ser porque .innerHTML escribe como string y "transforma"
+    entonces el contenido del array, que es number, a string. 
+ -->
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Objects</h2>
+
+<p id="demo"></p>
+
+<script>
+const person = {
+  firstName : "John",
+  lastName  : "Doe",
+  age     : 50,
+  eyeColor  : "blue"
+};
+
+document.getElementById("demo").innerHTML =
+person.firstName + " is " + person.age + " years old.";
+</script>
+
+
+<!-- 
+
+De forma similar al SQL donde una persona tenía distintos atributos como nombre, apellido etc
+aquí se crea un array de tipo objeto que puede almacenar distintas posiciones con valores
+distintos ya sean números o string, además en este tipo de array, las posiciones tienen nombre y valor,
+en vez de decir posición 0 en este array, es posición "firstName" y se separa con : del valor que tiene,
+que en este caso es John y es de tipo string ( comillas).
+
+a la hora de escribir, poner person.firstName es como decir person[0] ( aunque desconzco si funcionaría
+de esa forma.) 
+
+-->
+</body>
+</html>

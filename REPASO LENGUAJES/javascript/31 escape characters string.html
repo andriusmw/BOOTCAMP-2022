@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Strings</h2>
+
+<p>The escape sequence \" inserts a double quote in a string.</p>
+
+<p id="demo"></p>
+
+<script>
+   let text = "We are the so-called \"Vikings\" from the north.";
+	document.getElementById("demo").innerHTML = text; 
+</script>
+
+<!-------------------------------->
+
+<p>The length property returns the length of a string:</p>
+
+<p id="demo2"></p>
+
+<script>
+	let text2 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	document.getElementById("demo2").innerHTML = text2.length;
+</script>
+
+<!-------------------------------->
+
+
+<h2>JavaScript String Methods</h2>
+
+<p>The slice() method extract a part of a string
+and returns the extracted parts in a new string:</p>
+
+<p id="demo3"></p>
+
+<script>
+let str3 = "Apple, Banana, Kiwi";
+document.getElementById("demo3").innerHTML = str3.slice(7,13); 
+</script>
+
+<!-------------------------------->
+
+<p>The slice() method extract a part of a string
+and returns the extracted parts in a new string:</p>
+
+<p id="demo4"></p>
+
+<script>
+let str4 = "Apple, Banana, Kiwi";
+document.getElementById("demo4").innerHTML = str4.slice(7);
+</script>
+<!-------------------------------->
+
+
+<h2>JavaScript String Methods</h2>
+
+<p>The substr() method extract a part of a string
+and returns the extracted parts in a new string:</p>
+
+<p id="demo5"></p>
+
+<script>
+let str5 = "Apple, Banana, Kiwi";
+document.getElementById("demo5").innerHTML = str5.substr(7,6);
+</script>
+
+<p>The difference is that the second parameter specifies the length of the extracted part.</p>
+<!-------------------------------->
+
+</body>
+</html>
+
+
+
+</body>
+</html>

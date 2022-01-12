@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Use of The class Attribute in JavaScript</h2>
+<p>Click the button to hide all elements with class name "city":</p>
+
+<button onclick="myFunction()">Hide elements</button>
+
+<h2 class="city">London</h2>
+<p>London is the capital of England.</p>
+
+<h2 class="city">Paris</h2>
+<p>Paris is the capital of France.</p>
+
+<h2 class="city">Tokyo</h2>
+<p>Tokyo is the capital of Japan.</p>
+
+<script>
+function myFunction() {
+  var x = document.getElementsByClassName("city");
+  for (var i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+}
+</script>
+
+
+<!--  Al hacer click se llama a la función definida abajo
+  que no tiene nombre, habría que darle uno y lo que hace es
+  declarar la variable x con el valor de la clase city en el documento y luego abre bucle for donde compara el valor de i 
+  que es 0 con la longitud del valor de X, si I es menor que este valor, entra al bucle y básicamente cambia la propiedad
+  display del elemento X a none con lo cuál ya no se ven las letras en negrita que es el valor de esa variable (clase city)
+  y añade luego 1 a i para que se termine el bucle.
+
+  No entiendo lo que significa el corchete de x[i]
+
+-->
+</body>
+</html>
