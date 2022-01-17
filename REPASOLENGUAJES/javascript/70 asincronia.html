@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Callbacks</h2>
+
+<p>Do a calculation and then display the result.</p>
+
+<p id="demo"></p>
+
+<script>
+function myDisplayer(something) {
+  document.getElementById("demo").innerHTML = something;
+}
+
+function myCalculator(num1, num2, myCallback) {
+  let sum = num1 + num2;
+  myCallback(sum);
+}
+
+myCalculator(5, 5, myDisplayer);
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Callbacks</h2>
+
+<p>Do a calculation and then display the result.</p>
+
+<p id="demo"></p>
+
+<script>
+function myDisplayer(something) {
+  document.getElementById("demo").innerHTML = something;
+}
+
+function myCalculator(num1, num2, myCallback) {
+  let sum = num1 + num2;
+  myCallback(sum);
+}
+
+myCalculator(5, 5, myDisplayer);
+</script>
+<!-- 
+    myDisplayer que lo que hace es cambiar el id demo al valor que se le pase, es pasado como 
+    un parámetro por la llamada de la funcion myCalculator a la función myCalculator. Allí va al
+    hueco del callback y espera a tener el resultado de let sum, en ese momento se le pasa el valor
+    de sum y comienza la función myDisplayer que es mostrar en el id demo, el valor que le han pasado. 10
+
+-->
+</body>
+</html>
