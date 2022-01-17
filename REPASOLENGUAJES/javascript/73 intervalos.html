@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript setInterval()</h2>
+
+<p>Using setInterval() to display the time every second (1000 milliseconds).</p>
+
+<h1 id="demo"></h1>
+
+<script>
+setInterval(myFunction, 1000);
+
+function myFunction() {
+  let d = new Date();
+  document.getElementById("demo").innerHTML=
+  d.getHours() + ":" +
+  d.getMinutes() + ":" +
+  d.getSeconds();
+}
+</script>
+<!--
+    Lo que hace es poner un intervalo de 1 segundo para llamar a la función.
+    Luego dentro de la función emplea la función date() que obtiene la fecha
+    actual y la guarda dentro de let d. Después en la siguiente línea
+    ejecuta la función para modificar el contenido de demo con los 
+    siguientes valores: la hora de D, los minutos de D y los segundos de D
+    (D es la variable/let que tiene la fecha actual )
+    como se llama todo a cada segundo, se obtiene la ilusión de tener un reloj
+    en tiempo real ya que se va actualizando a intervalos de 1 segundo.
+-->
+</body>
+</html>
