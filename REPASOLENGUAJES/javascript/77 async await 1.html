@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript async / await</h2>
+
+<p id="demo"></p>
+
+<script>
+function myDisplayer(some) {
+  document.getElementById("demo").innerHTML = some;
+}
+
+async function myFunction() {return "Hello";}   //indica que es una función asincrona. Pasaría código y 
+                                                // al tener un valor/return se activaria la parte de 
+                                                // abajo. Como ya le pasamos el valor para la prueba
+                                                // se activa y se va a la rama de function value
+                                                // que llama al mydisplayer() con ese valor "Hello".
+
+myFunction().then(
+  function(value) {myDisplayer(value);},
+  function(error) {myDisplayer(error);}
+);</script>
+
+</body>
+</html>
