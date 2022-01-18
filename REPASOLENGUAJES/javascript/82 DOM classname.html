@@ -9,6 +9,8 @@
 <p class="intro">This example demonstrates the <b>getElementsByClassName</b> method.</p>
 
 <p id="demo"></p>
+<!-- Aquí se mostrará la segunda p con intro en la class-->
+<p id="demo2"></p>
 
 <script>
 const x = document.getElementsByClassName("intro");
@@ -17,8 +19,8 @@ document.getElementById("demo").innerHTML =
 </script>
 <!-- Copio lo de arriba para mostrar el segundo índice también-->
 <script>
-    const x = document.getElementsByClassName("intro");
-    document.getElementById("demo").innerHTML = 
+    const y = document.getElementsByClassName("intro");
+    document.getElementById("demo2").innerHTML = 
     'The Second paragraph (index 1) with class="intro" is: ' + x[1].innerHTML;
     </script>
     
