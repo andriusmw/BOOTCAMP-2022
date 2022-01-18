@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript HTML DOM</h2>
+<p>Finding HTML Elements Using <b>document.forms</b>.</p>
+
+<form id="frm1" action="/action_page.php">
+  First name: <input type="text" name="fname" value="Donald"><br>
+  Last name: <input type="text" name="lname" value="Duck"><br><br>
+  <input type="submit" value="Submit">
+</form> 
+
+<p>These are the values of each element in the form:</p>
+
+<p id="demo"></p>
+
+<script>
+const x = document.forms["frm1"];
+let text = "";
+for (let i = 0; i < x.length ;i++) {
+  text += x.elements[i].value + "<br>";
+}
+document.getElementById("demo").innerHTML = text;
+</script>
+<!--
+    crea la constante x y le pasa el formulario como un objeto.
+    crea la variable let text
+    crea bucle for y dentro de su scope la varible let i. 
+    i = 0 y en cada ciclo mientras que I sea mejor que la longitud de de X
+    se mete al bucle y le pasa a text el valor de indice I del objeto X + BR
+    Es decir; le pasa el primer indice de X, y el espacio, lo almacena, le pasa 
+    el siguiente y lo almacena abajo por el br, aun sin el br no se machaca
+    se pondrian al lado, está sumando strings, al ser un objeto, y lo recorre
+    como a un array con el bucle. Cuando el índice pasa de la longitud de X. 
+    Este para, sigue leyendo el código y se muestra en el div demo el contenido
+    del Let text. 
+
+    PD: text +=  eraa una arrow function que es como decir que ahora a text se le
+    sumaba el valor de lo que le seguía más sí mismo. 
+
+-->
+</body>
+</html>
