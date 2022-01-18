@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript HTML DOM</h2>
+
+<p>Finding HTML Elements by Query Selector</p>
+<p class="intro">Hello World!.</p>
+<p class="intro">This example demonstrates the <b>querySelectorAll</b> method.</p>
+
+<p id="demo"></p>
+
+<!--
+<script>
+const x = document.querySelectorAll("p.intro");
+document.getElementById("demo").innerHTML = 
+'The first paragraph (index 0) with class="intro" is: ' + x[0].innerHTML;
+</script>
+-->
+<script>
+    const x = document.querySelectorAll("p.intro");
+    let text = "";
+    for (let i = 0; i < x.length ;i++) {
+      text += x[i].innerHTML + "<br>";
+    }
+    document.getElementById("demo").innerHTML = text;
+    </script>
+<!--
+
+    EJERCICIO INVENTADO: mostrar el contenido de  todos los p.intro
+    Se selecionan todos los p.intro con querySelectroALL
+    Luego se crear la variable text en vacío
+    después de crea bucle for que en cada iteracion compara si i es menor que la longitud
+    de todos los p.intro( variable x) y si es menor se mete dentro y pasa a text el html de ese 
+    índice, + br y pasa al siguiente. Luego los escribe todos.
+-->
+</body>
+</html>
