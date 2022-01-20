@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>The Navigator Object</h2>
+
+<p>The cookieEnabled property returns true if cookies are enabled:</p>
+
+<p id="demo"></p>
+
+<script>
+document.getElementById("demo").innerHTML =
+"navigator.cookieEnabled is " + navigator.cookieEnabled + "<br>"
+"navigator.appName is " + navigator.appName + "<br>"
+"navigator.appCodeName is " + navigator.appCodeName + "<br>"
+"navigator.product is " + navigator.product + "<br>"
+"navigator app version is" + navigator.appVersion + "<br>"
+"navigator user Agent is" + navigator.userAgent + "<br>"
+"navitaror platform is" + navigator.platform + "<br>"
+"navigator languaje is" + navigator.language + "<br>"
+"is navigator online? true or false? " + navigator.onLine + "<br>"
+"javaEnabled is " + navigator.javaEnabled();
+ 
+
+
+//Creo que no sale más infor porque está desactualizado y por seguridad el chrome bloquea el acceso a tanta
+//info, por eso recomiendan abajo usar otros métodos. El código parece correcto y no da errores en consola.
+
+</script>
+
+<p>Warning !!!
+    The information from the navigator object can often be misleading, and should not be used to detect browser versions because:
+    
+    Different browsers can use the same name
+    The navigator data can be changed by the browser owner
+    Some browsers misidentify themselves to bypass site tests
+    Browsers cannot report new operating systems, released later than the browser
+    </p>
+
+</body>
+</html>
