@@ -3,7 +3,10 @@
 <body>
 
 <div ng-app="" ng-init="quantity=1;cost=5">
-<p>Total in dollar: {{ quantity * cost }}</p>
+    <p>FORMA DE ATACAR NG-INIT 1</p>
+    <p>Total in dollar: {{ quantity * cost }}</p>
+    <p>FORMA DE ATACAR NG-INIT 2</p>
+    <p>Total in dollar: <span ng-bind="quantity * cost"></span></p>
 </div>
 
 </body>
