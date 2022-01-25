@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+
+<div ng-app="" ng-init="names=['Jani','Hege','Kai']">
+  <p>Looping with ng-repeat:</p>
+  <ul>
+    <li ng-repeat="x in names">
+      {{ x }}
+    </li>
+  </ul>
+</div>
+
+
+<!-- 
+1-Carga libreria de angular
+2-crea una app a partir del div (ng-app)
+3- inicializa un array llamado names y le da los valores a los indices.
+4-llama a la función de angular ng-repeat para escribir el contenido del array
+
+lo que hace es recorrer el array y escribir cada indice, en este caso dentro de una lista li.
+Llevará su bucle for o lo que sea en el archivo o libreria al que hace referencia.
+-->
+</body>
+</html>
