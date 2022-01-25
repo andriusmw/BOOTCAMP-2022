@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+{{ firstName + " " + lastName }}
+</div>
+
+<script>
+var app = angular.module("myApp", []);
+app.controller("myCtrl", function($scope) {
+    $scope.firstName = "John";
+    $scope.lastName = "Doe";
+});
+</script>
+
+<!--Se declara de esa manera una app con módulos y que tiene controladores, solo hay que cambiar el texto 
+o los nombres de las variables dentro de la expresión o los nombres de las cosas, pero tiene esa estructura
+si cambias A en un sitio, debes cambiarlo también en otro. Toooodo ese chorro muestra las propiedades
+firstname y lastname.-->
+
+</body>
+</html>

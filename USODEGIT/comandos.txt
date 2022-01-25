@@ -9,6 +9,12 @@ cd myproject
 
 git init 
 
+----creo repo en github y lo quiero poner en git bash---
+
+git init  + intro y luego la línea de abajo
+
+git remote add origin URLacabadaen .git
+ ej: git remote add origin https://github.com/w3schools-test/hello-world.git
 
 
 
