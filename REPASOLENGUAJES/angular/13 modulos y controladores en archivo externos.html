@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+{{ firstName + " " + lastName }}
+</div>
+
+<script src="myApp.js"></script>
+<script src="myCtrl.js"></script>
+
+
+<!-- El sentido del angular es poder ejecutar mazo funciones y cosas sin tener que escribirlo todo en 
+un mismo sitio, te permite tener distintos ficheros uno para cada cosa y que quede más organizada 
+cada función por separado, por eso, digamos que vas enlazando a los DIVS distintas propiedades
+como si le estuvieras poniendo clases css y luego en un archivo aparte tienes los datos de esa clase.
+
+Aquí ng-app vincular el div a myApp para pasarle la definición de ese módulo y sus propiedades.
+Y ng-controler le pasa los controladores . Abajo vemos las llamadas para cargar los archivos necesarios
+myAPP.js y myCtrl en vez de ponerlos todo junto como en los ejemplos anteriores, además ahora se ve 
+mucho más claro el código.-->
+</body>
+</html>
