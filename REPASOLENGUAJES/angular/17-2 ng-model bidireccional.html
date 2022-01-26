@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+Name: <input ng-model="name">
+<h1>You entered: {{name}}</h1>
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.name = "John Doe";
+});
+</script>
+
+<p>Change the name inside the input field, and you will see the name in the header changes accordingly.</p>
+<p> Vincula en ambos sentidos, en el h1 se está llamando al ng-model name, vamos, el valor del input. 
+    Además abajo en el script vemos que se detalla el controlador, de la app myapp y se especifica  
+    un valor para name que está dentro del scope de la app. Si creamos otro ng-model que sea lastname
+    por ejemplo podemos darle otro valor desde el script y mostrarlo llamándolo con la expresion como
+    en h1. </p>
+</body>
+</html>
