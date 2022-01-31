@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+<div ng-app="myApp" ng-controller="myCtrl">
+
+<p>The hexadecimal value of 255 is:</p>
+
+<h1>{{hex}}</h1>
+
+</div>
+
+<p>A custom service with a method that converts a given number into a hexadecimal number.</p>
+
+
+<!--  
+
+Abajo en el script se crea la app, y ser crea el servicio y el controlador. Vincula el controlador al 
+div de arriba y su scope. al igual que la app. Además el controlador indica que en ese scope va a estar
+disponible el servicio hexafy que lo que hace es coger un número que le pasan y aplicarle la funcion
+.toString(16) que sirve  para transformar a hexadecimal, podriamos poner lo que fuera y llamarlo
+como fuera.
+
+Finalmente en el controlador hemos puesto que dentro del scope va a estar disponible  .hex que va a tener
+el valor de pasarle 255 a la funcion hexafy y lo que de el return es lo que se va a mostrar.
+
+-->
+
+<script>
+var app = angular.module('myApp', []);
+
+app.service('hexafy', function() {
+    this.myFunc = function (x) {
+        return x.toString(16);
+    }
+});
+app.controller('myCtrl', function($scope, hexafy) {
+  $scope.hex = hexafy.myFunc(255);
+});
+</script>
+
+</body>
+</html>
