@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html >
+<style>
+table, th , td  {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+ 
+<div ng-app="myApp" ng-controller="customersCtrl">
+ 
+<table>
+  <tr ng-repeat="x in names">
+    <td>{{ x.Name }}</td>
+    <td>{{ x.Country }}</td>
+  </tr>
+</table>
+ 
+</div>
+ 
+<script>
+var app = angular.module('myApp', []);
+app.controller('customersCtrl', function($scope, $http) {
+   $http.get("customers_mysql.php")
+   .then(function (response) {$scope.names = response.data.records;});
+});
+</script>
+ 
+</body>
+
+<!-- AngularJS is perfect for displaying data from a Database. Just make sure the data is in JSON format.
+
+Fetching Data From a PHP Server Running MySQL
+    
+    De esta forma cargaríamos datos de un servidor PHP que tenga SQL haciendo un "Fetch". 
+    Memorizar el código o ejemplo y cambiar los nombres de las páginas, al final de repetir se
+    aprender y memoriza. 
+
+    Entender que en el script define la app, el modulo, el controlador, que lo llama customresCtrl
+    Entender lo que es el scope y que dentro llama al http usando el método get desde la página 
+    customers_mysql.php ENTONCES con el .then coge la respuesta y la muestra con esa función.
+
+    Tal como hemos definido en la parte css todo lo que se muestra va dentro de una tabla
+    ng-repeat se encarga de crear las filas y el estilo se lo da el css de arriba.
+
+
+
+-->
+</html>
