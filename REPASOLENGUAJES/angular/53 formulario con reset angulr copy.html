@@ -28,4 +28,22 @@ app.controller('formCtrl', function($scope) {
 </script>
 
 </body>
+<!--
+
+Example Explained
+The ng-app directive defines the AngularJS application.
+
+The ng-controller directive defines the application controller.
+
+The ng-model directive binds two input elements to the user object in the model.
+
+The formCtrl controller sets initial values to the master object, and defines the reset() method.
+
+The reset() method sets the user object equal to the master object.
+
+The ng-click directive invokes the reset() method, only if the button is clicked.
+
+The novalidate attribute is not needed for this application, but normally you will use it in AngularJS forms, to override standard HTML5 validation.
+
+-->
 </html>
