@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+
+<body ng-app="myApp">
+
+<p><a href="#/!">Main</a></p>
+
+<a href="#!london">City 1</a>
+<a href="#!paris">City 2</a>
+
+<p>Click on the links to read about London and Paris.</p>
+
+<div ng-view></div>
+
+<script>
+var app = angular.module("myApp", ["ngRoute"]);
+app.config(function($routeProvider) {
+    $routeProvider
+    .when("/", {
+        templateUrl : "main.htm" 
+    })
+    .when("/london", {
+        templateUrl : "london.htm" //añade a la ruta londo.htm que eso lo que hace es enviar
+        // al ngRoute esa ruta y entonces en el ng-view se crga lo que haya en london.htm
+        //London.htm es un archivo html que puede ser otra web distinta, una tabla , una lista
+        //un div con una imgen, video, etc.
+    })
+    .when("/paris", {
+        templateUrl : "paris.htm"
+    });
+});
+</script>
+
+</body>
+</html>
