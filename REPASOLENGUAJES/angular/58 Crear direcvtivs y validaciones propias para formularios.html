@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>  
+<body>
+
+<h2>Validation Example</h2>
+
+<form ng-app="myApp" ng-controller="validateCtrl" 
+name="myForm" novalidate>
+
+<p>Username:<br>
+<input type="text" name="user" ng-model="user" required>
+<span style="color:red" ng-show="myForm.user.$dirty && myForm.user.$invalid">
+<span ng-show="myForm.user.$error.required">Username is required.</span>
+</span>
+</p>
+
+<p>Email:<br>
+<input type="email" name="email" ng-model="email" required>
+<span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+<span ng-show="myForm.email.$error.required">Email is required.</span>
+<span ng-show="myForm.email.$error.email">Invalid email address.</span>
+</span>
+</p>
+
+<p>
+<input type="submit"
+ng-disabled="myForm.user.$dirty && myForm.user.$invalid ||  
+myForm.email.$dirty && myForm.email.$invalid">
+</p>
+
+</form>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('validateCtrl', function($scope) {
+    $scope.user = 'John Doe';
+    $scope.email = 'john.doe@gmail.com';
+});
+</script>
+
+</body>
+<!--Este ejemplo se ve mejor
+
+La app de angular, pone John Doe en el user y john.doe@gmail.com en el campo email
+abajo de cada uno hay un spam con ng-show que se muestra si la propiedd ng-model del 
+name o del email son Dirty y invalidad, es decir, si se han tocado y además están 
+con valores no válidos ejemplo , en blanco o un texto que no es un email válido.
+
+Arriba tiene el novalidate porque ponemos nuestras propias validaciones.
+Tiene el validateCtrl en el controlador para vincular la app al controlador que hemos
+creado.
+El formulario tiene el nombre MyForm para después poder atacar al MyForm.Name y
+MyForm.Email 
+
+Todo el formulario está vinculado a la app, y toda la app al controlador y al controlado, los ng-models
+y estos a los names de los campos , campos que tienen valores y estados, validos, inválidos, dirty etc
+
+-->
+</html>
