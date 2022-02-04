@@ -1,0 +1,13 @@
+
+ng serve --open  -> para cargar el angular
+
+Ctrl + C -> para pararlo
+
+---------------
+
+npm install -g @angular/cli  -> instalar angular
+
+ng new myApp   -> crear un componente principal
+
+ng generate component NombreComponente  -> crea un componente secundario
+		->EJ: ng generate component Heroes
