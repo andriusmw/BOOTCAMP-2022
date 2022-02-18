@@ -11,3 +11,29 @@ ng new myApp   -> crear un componente principal
 
 ng generate component NombreComponente  -> crea un componente secundario
 		->EJ: ng generate component Heroes
+
+-----------componente de componente--------
+ng generate component hero-detail 
+
+
+---------------Nuevo servicio-----------
+
+ng generate service hero
+
+---------------------
+AppModule
+
+Angular needs to know how the pieces of your application 
+fit together and what other files and libraries the 
+application requires. This information is called metadata.
+
+Some of the metadata is in the @Component decorators that 
+you added to your component classes. Other critical metadata
+ is in @NgModule decorators.
+
+The most important @NgModule decorator annotates 
+the top-level AppModule class.
+
+The Angular CLI generated an AppModule class in 
+src/app/app.module.ts when it created the project. 
+This is where you opt-in to the FormsModule.

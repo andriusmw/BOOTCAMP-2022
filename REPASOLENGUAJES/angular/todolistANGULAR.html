@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body ng-app="myApp" ng-controller="todoCtrl"> <!--Vincula el div al ng-app que seria el componente principal de angular-->
+
+<h2>My Todo List</h2>
+
+<form ng-submit="todoAdd()"> <!--Cuando hay submit, se llama a la funcion todoAdd()-->
+    <input type="text" ng-model="todoInput" size="50" placeholder="Add New"> <!--Este cuadro pasa info con ng-model -->
+    <input type="submit" value="Add New">
+</form>
+
+<br>
+
+<div ng-repeat="x in todoList"> <!--Recorre y muestra el array de todolist-->
+    <input type="checkbox" ng-model="x.done"> <span ng-bind="x.todoText"></span>
+    <!--Muestra la casilla donde de cada objeto de la todolist Y el nombre(todotext) de cada objeto de la todolist -->
+</div>
+
+<p><button ng-click="remove()">Remove marked</button></p>
+<!--Llama a la función remove cuando hay un click, está suscrito al evento click con ng-click-->
+
+<script>
+var app = angular.module('myApp', []); 
+app.controller('todoCtrl', function($scope) {
+    $scope.todoList = [{todoText:'Clean House', done:false}]; //Crea el arraytodolist, cada objeto tiene "todotext" y "done"
+
+    $scope.todoAdd = function() { 
+        $scope.todoList.push({todoText:$scope.todoInput, done:false}); //añade un objeto con el texto del input en todotext y done en false
+        $scope.todoInput = ""; //vacía el input-text
+    };
+
+    $scope.remove = function() {
+        var oldList = $scope.todoList;
+        $scope.todoList = [];
+        angular.forEach(oldList, function(x) {
+            if (!x.done) $scope.todoList.push(x); // id(x.done:false)--> Eso sería más cómodo, también falta el ELSE 
+            
+     // crea la var oldlist, le pasa lo que hay en lista tal cual en ese momento. Luego vacía la lista y recorre
+     //cada elemento del array de la lista de oldList con el bucle for each comparando si tiene un "done" 
+     //Esto es si tiene valor distinto de false para añadirla. Si tuviera un return True esa casilla, , .done
+     //tendría valor y ya no la añadiría. Pero si la tarea está sin terminar, .done sigue teniendo un valor false
+     //y es como sino tuviera la propiedad y entonces la añade a la lista nueva.
+        });
+    };
+});
+</script>
+
+</body>
+</html>

@@ -16,6 +16,9 @@ git init  + intro y luego la línea de abajo
 git remote add origin URLacabadaen .git
  ej: git remote add origin https://github.com/w3schools-test/hello-world.git
 
+git remote set-url origin NUEVAURL
+-->Para cambiar el remote origin para hacer push en otro repositorio
+
 
 
 ------ ACCIONES -----
