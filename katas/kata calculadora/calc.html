@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kata calculadora</title>
 
-    <link rel="stylesheet" href="/css/calc.css">
-    <script src="/js/calc.js"> </script>
+    <link rel="stylesheet" href="css/calc.css">
+    <script src="js/calc.js"> </script>
 
 
 </head>
@@ -15,14 +15,14 @@
 
     <div>
         <span>Introduce Operador A</span>
-                <input type="number">
+                <input type="number" id="operadorA">
         <span>Introduce Operador B</span>
-                <input type="number">
+                <input type="number" id="operadorB">
         <span>Seleciona operción</span>
-          <button>SUMA</button>  
-          <button>RESTA</button>     
-          <button>MULTIPLICAR</button>  
-          <button>DIVIDIR</button>  
+          <button onclick="suma()" >SUMA</button>  
+          <button onclick="resta()" >RESTA</button>     
+          <button onclick="multiplicar()" >MULTIPLICAR</button>  
+          <button onclick="dividir()" >DIVIDIR</button>  
       
     </div>
 
