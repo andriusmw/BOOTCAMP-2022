@@ -14,4 +14,8 @@ function calcularcalificacion() {
                                  } else {
                                     alert("INTRODUCE UN VALOR NUMÉRICO VÁLIDO DEL 0 AL 10")
                                  }
-}
+    }
+
+    //Todavía se me cuela el signo . y - a pesar de poner input type number, los toma 
+    //como valores nulos, osea que le da el valor 0 y por tanto sale por la primera salida
+    // diciendo que es insuficiente en vez de tirar a la última y mostrar el error.
