@@ -40,3 +40,29 @@ body {
 .header button {
     margin-left: 30%;
 }
+
+
+/*---------nuevatarea --------*/
+/*                            */
+/*----------------------------*/
+
+.nuevatarea {
+    background-color: aliceblue;
+    max-width: 30%;
+    margin-left: 2em;
+    float: left;
+    margin-top: 1em;
+}
+
+
+.nuevatarea span {
+    padding: 1em;
+}
+
+.nuevatarea p {
+   padding: 1em;
+}
+
+.nuevatarea button {
+    padding: 1em;
+}
