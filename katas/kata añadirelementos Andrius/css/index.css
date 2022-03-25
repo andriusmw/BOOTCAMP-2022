@@ -1,6 +1,6 @@
 
 .nuevatarea {
-    background-color: yellow;
+    background-color: aliceblue;
 }
 
 body {
@@ -8,5 +8,10 @@ body {
 }
 
 .cuerpo {
+   
+    margin-top: 2em;
+}
+
+.header {
     background-color: aliceblue;
 }

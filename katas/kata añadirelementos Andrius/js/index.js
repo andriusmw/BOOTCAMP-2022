@@ -11,6 +11,7 @@
       
 
         const NuevaTarea = document.createElement("div");
+        NuevaTarea.className += "nuevatarea"  //Aplica la clase css "nuevatarea al div de la constante NuevaTarea"
         const NuevoSpan = document.createElement("span");
         NuevoSpan.textContent = "Título Tarea";
         const p = document.createElement("p")
@@ -25,6 +26,7 @@
         const p2 = document.createElement("p")
         const p2Descrip = DescripTarea;
         p2.textContent = p2Descrip;
+
 
 
         NuevaTarea.appendChild(NuevoSpan);
@@ -45,6 +47,8 @@
         //osea debe de meter ahí el div creado con la tarea.
     
         console.log("ha recorrido todo")
+
+
     
     })
 
