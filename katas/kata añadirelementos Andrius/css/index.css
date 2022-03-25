@@ -12,6 +12,31 @@ body {
     margin-top: 2em;
 }
 
+/*---------header ------------*/
+/*                            */
+/*----------------------------*/
+
 .header {
     background-color: aliceblue;
+    max-width: 30%;
+}
+
+.header h1 {
+    text-align: center;
+}
+
+.header span {
+    margin-left: 30%;
+}
+
+.header input {
+    margin-left: 20%;
+}
+
+.header textarea {
+    margin-left: 20%;
+}
+
+.header button {
+    margin-left: 30%;
 }
