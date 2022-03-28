@@ -3,6 +3,7 @@ const textarea = document.querySelector("textarea");
 const addBtn = document.querySelector(".btn-add");
 const ul = document.querySelector("ul");
 //const empty = document.querySelector(".empty");
+const divtareas = document.getElementById("listatareas");
 
 addBtn.addEventListener("click", (e) => {
   e.preventDefault();
@@ -11,18 +12,23 @@ addBtn.addEventListener("click", (e) => {
   const descrip = textarea.value;
 
   if (text !== "" & descrip!== "") {
-    const li = document.createElement("li");
+    const div = document.createElement("div");
     const p = document.createElement("p");
     const descripP = document.createElement("div")
     p.textContent = text;
     descripP.textContent = descrip;
 
-    li.appendChild(p);
-    li.appendChild(descripP)
-    li.appendChild(addDeleteBtn());
-    ul.appendChild(li);
+    div.className += "nuevatarea"
 
-    input.value = "";
+    div.appendChild(p);
+    div.appendChild(descripP)
+    div.appendChild(addDeleteBtn());
+    
+    const divtareas = document.getElementById("listatareas");
+    divtareas.appendChild(div);
+   
+
+   // input.value = "";
     //empty.style.display = "none";
   }
 });
@@ -35,7 +41,7 @@ function addDeleteBtn() {
 
   deleteBtn.addEventListener("click", (e) => {
     const item = e.target.parentElement;
-    ul.removeChild(item);
+    divtareas.removeChild(item);
 
     const items = document.querySelectorAll("li");
 
