@@ -11,6 +11,16 @@ articulos.forEach((articulo)=>{
 
     console.log("drag start works!")
   });
+  articulo.addEventListener('dragend',(event)=>{
+
+    console.log("drag End works!")
+  });
+  articulo.addEventListener('drag',(event)=>{
+
+    console.log("drag  works!")
+  });
+  
 });
 //GETELEMENTBYCLASSNAME crea un array de objetos de todos los resultados encontradoscon esa clase
 // de modo que habría que crear un array de objetos y para cada objeto escucharel evento 
+
