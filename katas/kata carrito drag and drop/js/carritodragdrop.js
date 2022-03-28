@@ -58,4 +58,3 @@ contendor.addEventListener("drop", e => {
          contendor.appendChild(divart);
     
 })
-
