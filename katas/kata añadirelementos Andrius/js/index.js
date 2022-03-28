@@ -27,6 +27,8 @@
         const p2Descrip = DescripTarea;
         p2.textContent = p2Descrip;
 
+       
+
 
 
         NuevaTarea.appendChild(NuevoSpan);
@@ -34,6 +36,7 @@
          //Indica que meta el span, dentro del div que ha creado y luego que meta el p.   
          NuevaTarea.appendChild(NuevoSpan2);
          NuevaTarea.appendChild(p2);
+         NuevaTarea.appendChild(BORRAR); //Llama la función, crea el botón, vincula la clase, el evento etc
 
 
         /*/  LO QUE PASABA ERA QUE DOCUMENT.WRITE VOLVIA A ESCRIBIR EN EL DOCUMENTO Y CLARO, ya no habia div listatareas donde añadir nada
@@ -50,19 +53,37 @@
 
 
     
-    })
+    
+ });
+
 
 
     //--------------------------------function BORRAR TAREA----------------------------------------------------------//
     //                                                                                                               //
     //---------------------------------------------------------------------------------------------------------------//
-        
-    const borrarTarea   = document.getElementById("dltbtn");
+        const BORRAR = addDltBtn();
+        function addDltBtn() {
 
-    borrarTarea.addEventListener("click", (e) =>{
+            const DeleteButtonn = document.createElement("button");
+            DeleteButtonn.textContent = "X";
+            DeleteButtonn.className += "dltbtn"
+            //Crea el botón de borrar, le pasa el contenido, le asigna una clase con la que lo llamaremos luego
+            //para seleccionar su evento click.
+
+       
+    //const borrarTarea   = document.getElementsByClassName("dltbtn");
+
+    DeleteButtonn.addEventListener("click", (e) =>{
         e.preventDefault();
-        console.log("clickado borrar tarea")   
-     })
+        console.log("clickado borrar tarea")
+                                                }) 
+    
+
+
+                            }  
+
+ 
+     
 
     
   
