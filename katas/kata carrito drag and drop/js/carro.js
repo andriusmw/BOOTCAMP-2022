@@ -48,6 +48,8 @@ articulo3.addEventListener("dragstart", e => {
  articulo3.addEventListener('dragend',(event)=>{
 
     console.log("drag End works!")
+    //contendor.appendChild(articulo3)
+    
   });
   articulo3.addEventListener('drag',(event)=>{
 
@@ -73,5 +75,7 @@ contendor.addEventListener("dragover", e => {
 })
 contendor.addEventListener("drop", e => {
     console.log("Drop")
-    
+    const artcomprado = e.target;
+    contendor.appendChild(artcomprado)
+    //contendor.appendChild(articulo3)
 })
