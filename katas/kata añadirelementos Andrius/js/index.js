@@ -52,6 +52,18 @@
     
     })
 
+
+    //--------------------------------function BORRAR TAREA----------------------------------------------------------//
+    //                                                                                                               //
+    //---------------------------------------------------------------------------------------------------------------//
+        
+    const borrarTarea   = document.getElementById("dltbtn");
+
+    borrarTarea.addEventListener("click", (e) =>{
+        e.preventDefault();
+        console.log("clickado borrar tarea")   
+     })
+
     
   
 
