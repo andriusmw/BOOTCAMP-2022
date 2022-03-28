@@ -1,89 +1,52 @@
-//function crearTarea(e) {
-    const crearTarea = document.getElementById("addbtn")
+const input = document.querySelector("input");
+const textarea = document.querySelector("textarea");
+const addBtn = document.querySelector(".btn-add");
+const ul = document.querySelector("ul");
+//const empty = document.querySelector(".empty");
 
-    crearTarea.addEventListener("click", (e) =>{
-        e.preventDefault();
-        console.log("inicio")
-        let NombreTarea = document.getElementById("nombretarea").value;
-        let DescripTarea = document.getElementById("descriptarea").value;
-        //recibe datos del index
-    
-      
+addBtn.addEventListener("click", (e) => {
+  e.preventDefault();
 
-        const NuevaTarea = document.createElement("div");
-        NuevaTarea.className += "nuevatarea"  //Aplica la clase css "nuevatarea al div de la constante NuevaTarea"
-        const NuevoSpan = document.createElement("span");
-        NuevoSpan.textContent = "Título Tarea";
-        const p = document.createElement("p")
-        const pnombretarea = NombreTarea; //Crea una constante para el valor
-        p.textContent = pnombretarea;// le pasa el valor como contenido de texto
+  const text = input.value;
+  const descrip = textarea.value;
 
-        //Crea el div mete el span, le pasa el valor al span, crea el P donde va a ir el valor del titulo de la tarea
-        //es decir NombreTarea y se lo pasa.
+  if (text !== "" & descrip!== "") {
+    const li = document.createElement("li");
+    const p = document.createElement("p");
+    const descripP = document.createElement("div")
+    p.textContent = text;
+    descripP.textContent = descrip;
 
-        const NuevoSpan2 = document.createElement("span");
-        NuevoSpan2.textContent = "Descripción";
-        const p2 = document.createElement("p")
-        const p2Descrip = DescripTarea;
-        p2.textContent = p2Descrip;
+    li.appendChild(p);
+    li.appendChild(descripP)
+    li.appendChild(addDeleteBtn());
+    ul.appendChild(li);
 
-       
+    input.value = "";
+    //empty.style.display = "none";
+  }
+});
 
+function addDeleteBtn() {
+  const deleteBtn = document.createElement("button");
 
+  deleteBtn.textContent = "X";
+  deleteBtn.className = "btn-delete";
 
-        NuevaTarea.appendChild(NuevoSpan);
-            NuevaTarea.appendChild(p);
-         //Indica que meta el span, dentro del div que ha creado y luego que meta el p.   
-         NuevaTarea.appendChild(NuevoSpan2);
-         NuevaTarea.appendChild(p2);
-         NuevaTarea.appendChild(BORRAR); //Llama la función, crea el botón, vincula la clase, el evento etc
+  deleteBtn.addEventListener("click", (e) => {
+    const item = e.target.parentElement;
+    ul.removeChild(item);
 
+    const items = document.querySelectorAll("li");
 
-        /*/  LO QUE PASABA ERA QUE DOCUMENT.WRITE VOLVIA A ESCRIBIR EN EL DOCUMENTO Y CLARO, ya no habia div listatareas donde añadir nada
-        ni nada de lo anterior, machacaba todo y escribia el div que yo le habia dicho. Hay que usar document.createElement*/
+    if (items.length === 0) {
+     // empty.style.display = "block";
+    }
+  });
 
+  return deleteBtn;
+}
 
-    
-        const divtareas = document.getElementById("listatareas");
-        divtareas.appendChild(NuevaTarea);
-        //Seleciona el div listatareas y crea un elemento hijo llamado NuevaTarea
-        //osea debe de meter ahí el div creado con la tarea.
-    
-        console.log("ha recorrido todo")
-
-
-    
-    
- });
-
-
-
-    //--------------------------------function BORRAR TAREA----------------------------------------------------------//
-    //                                                                                                               //
-    //---------------------------------------------------------------------------------------------------------------//
-        const BORRAR = addDltBtn();
-        function addDltBtn() {
-
-            const DeleteButtonn = document.createElement("button");
-            DeleteButtonn.textContent = "X";
-            DeleteButtonn.className += "dltbtn"
-            //Crea el botón de borrar, le pasa el contenido, le asigna una clase con la que lo llamaremos luego
-            //para seleccionar su evento click.
-
-       
-    //const borrarTarea   = document.getElementsByClassName("dltbtn");
-
-    DeleteButtonn.addEventListener("click", (e) =>{
-        e.preventDefault();
-        console.log("clickado borrar tarea")
-                                                }) 
-    
-
-
-                            }  
-
- 
-     
 
     
   
