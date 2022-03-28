@@ -61,6 +61,7 @@ body {
 
 .nuevatarea p {
    padding: 1em;
+   word-break: break-word;
 }
 
 .nuevatarea button {

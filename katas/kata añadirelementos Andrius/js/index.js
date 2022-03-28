@@ -14,11 +14,13 @@ addBtn.addEventListener("click", (e) => {
   if (text !== "" & descrip!== "") {
     const div = document.createElement("div");
     const p = document.createElement("p");
-    const descripP = document.createElement("div")
+    const descripP = document.createElement("p")
     p.textContent = text;
     descripP.textContent = descrip;
+   // descripP.className += "descripcion:read-only";
+    //const LEER = document.getElementsByClassName("descripcion").readOnly = "true";
 
-    div.className += "nuevatarea"
+    div.className += "nuevatarea";
 
     div.appendChild(p);
     div.appendChild(descripP)
@@ -43,11 +45,7 @@ function addDeleteBtn() {
     const item = e.target.parentElement;
     divtareas.removeChild(item);
 
-    const items = document.querySelectorAll("li");
-
-    if (items.length === 0) {
-     // empty.style.display = "block";
-    }
+   
   });
 
   return deleteBtn;
