@@ -116,7 +116,7 @@ contendor.addEventListener("drop", e => {
     //Muestro Drop para saber que se ejecuta
     const id = e.dataTransfer.getData("id");
     const nombre = e.dataTransfer.getData("Nombre");
-    const precio = e.dataTransfer.getData("Precio")
+    let precio = e.dataTransfer.getData("Precio")
     //Recibo los valores para id, nombre y precio, enviados en drag start
 
     if (id == "artid1"  || "artid2"  || "artid3")  {
@@ -147,6 +147,7 @@ contendor.addEventListener("drop", e => {
 //-------------------------------------------------CALCULAR TOTAL  -----------------------------------------------------------//
 //----------------------------------------------------------------------------------------------------------------------------//
 let total = 0;
+total = parseInt(total);
 
 const calculadordetotal = document.getElementById("totalbutton");
 calculadordetotal.addEventListener("click", e => {
@@ -157,11 +158,15 @@ function Calculartotal() {
 
   const precioasalirentotal = document.querySelectorAll(".preciodrop")
    precioasalirentotal.forEach(artcomprado => {
-           total =  total + precio ;
-           console.log(total);
-         
-         
+
+          precio = parseInt(precio);
+          //convierte a int (numero)
+           total =  total + precio ;    
     });
+    console.log("el total es: " + total);
+    this.total = 0;
+    //Problema a la hora del orden de sumar y de reiniciar las variables, pero suma y muestra total
+    //queda pendiente ver cómo lo suma y como reinicia el valor
 }
 
 
