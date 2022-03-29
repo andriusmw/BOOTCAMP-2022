@@ -136,6 +136,7 @@ contendor.addEventListener("drop", e => {
         let precioarticulocomprado = document.createElement("p")
         precioarticulocomprado.textContent = precio;
         //Crea elemento p y le pasa el textcontent del precio
+        precioarticulocomprado.className += "preciodrop"
 
         contendor.appendChild(articulocomprado);
         contendor.appendChild(nombrearticulocomprado);
@@ -143,6 +144,25 @@ contendor.addEventListener("drop", e => {
 
     }
 
+//-------------------------------------------------CALCULAR TOTAL  -----------------------------------------------------------//
+//----------------------------------------------------------------------------------------------------------------------------//
+let total = 0;
+
+const calculadordetotal = document.getElementById("totalbutton");
+calculadordetotal.addEventListener("click", e => {
+  Calculartotal();
+    })
+
+function Calculartotal() {
+
+  const precioasalirentotal = document.querySelectorAll(".preciodrop")
+   precioasalirentotal.forEach(artcomprado => {
+           total =  total + precio ;
+           console.log(total);
+         
+         
+    });
+}
 
 
 })
