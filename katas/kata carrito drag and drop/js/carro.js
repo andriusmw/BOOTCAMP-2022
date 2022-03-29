@@ -1,5 +1,6 @@
-//-------------------ARTICULO 1 ----------------------//
-//----------------------------------------------------//
+
+//------------------------------------------ARTICULO 1 -------------------------------------------------------------------------//
+//-----------------------------------------------------------------------------------------------------------------------------//
 const articulo = document.getElementById("articulo1");
 
 articulo.addEventListener("dragstart", e => {
@@ -7,10 +8,12 @@ articulo.addEventListener("dragstart", e => {
     e.dataTransfer.setData("id", e.target.id);
     console.log("drag start");
     //Transfiere el id al drop
+
     let nombre = document.getElementById("nombrearticulo1").textContent;
     e.dataTransfer.setData("Nombre", nombre);
     console.log(nombre);
     //Esto le pasa el nombre del artículo
+
     let precio = document.getElementById("precio1").textContent;
     e.dataTransfer.setData("Precio", precio);
     console.log(precio);
@@ -28,18 +31,20 @@ articulo.addEventListener("dragstart", e => {
   });
   
 
-//-------------------ARTICULO 2 ----------------------//
-//----------------------------------------------------//
+//-----------------------------------------------------ARTICULO 2 --------------------------------------------------------------//
+//-----------------------------------------------------------------------------------------------------------------------------//
 const articulo2 = document.getElementById("articulo2");
 
 articulo2.addEventListener("dragstart", e => {
   e.dataTransfer.setData("id", e.target.id);
     console.log("drag start");
     //Transfiere el id al drop
+
     let nombre = document.getElementById("nombrearticulo2").textContent;
     e.dataTransfer.setData("Nombre", nombre);
     console.log(nombre);
     //Esto le pasa el nombre del artículo
+
     let precio = document.getElementById("precio2").textContent;
     e.dataTransfer.setData("Precio", precio);
     console.log(precio);
@@ -56,18 +61,21 @@ articulo2.addEventListener("dragstart", e => {
   });
   
 
-//-------------------ARTICULO 3 ----------------------//
-//----------------------------------------------------//
+//--------------------------------------------------ARTICULO 3 -----------------------------------------------------------//
+//-----------------------------------------------------------------------------------------------------------------------//
+
 const articulo3 = document.getElementById("articulo3");
 
 articulo3.addEventListener("dragstart", e => {
   e.dataTransfer.setData("id", e.target.id);
     console.log("drag start");
     //Transfiere el id al drop
+
     let nombre = document.getElementById("nombrearticulo3").textContent;
     e.dataTransfer.setData("Nombre", nombre);
     console.log(nombre);
     //Esto le pasa el nombre del artículo
+
     let precio = document.getElementById("precio3").textContent;
     e.dataTransfer.setData("Precio", precio);
     console.log(precio);
@@ -87,8 +95,8 @@ articulo3.addEventListener("dragstart", e => {
   });
   
 
-//-------------------CONTENEDOR ---------------//
-//---------------------------------------------//
+//------------------------------------------------------CONTENEDOR -----------------------------------------------------------//
+//----------------------------------------------------------------------------------------------------------------------------//
 
 
 const contendor = document.getElementById("carrito");
@@ -116,15 +124,19 @@ contendor.addEventListener("drop", e => {
         console.log(nombre);
         console.log(precio);
         //Muestra por consola
+
         let articulocomprado = document.createElement("div")
         articulocomprado.textContent = id
         //Crea elemento div y le pasa el textcontent del id
+
         let nombrearticulocomprado = document.createElement("p")
         nombrearticulocomprado.textContent = nombre;
         //Crea elemento p y le pasa el textcontent del nombre
+
         let precioarticulocomprado = document.createElement("p")
         precioarticulocomprado.textContent = precio;
         //Crea elemento p y le pasa el textcontent del precio
+
         contendor.appendChild(articulocomprado);
         contendor.appendChild(nombrearticulocomprado);
         contendor.appendChild(precioarticulocomprado);
