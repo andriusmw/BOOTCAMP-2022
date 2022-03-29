@@ -4,7 +4,9 @@ const articulo = document.getElementById("articulo1");
 
 articulo.addEventListener("dragstart", e => {
     
+    e.dataTransfer.setData("id", e.target.id);
     console.log("drag start");
+
 });
 
  articulo.addEventListener('dragend',(event)=>{
@@ -22,7 +24,7 @@ articulo.addEventListener("dragstart", e => {
 const articulo2 = document.getElementById("articulo2");
 
 articulo2.addEventListener("dragstart", e => {
-    
+  e.dataTransfer.setData("id", e.target.id);
     console.log("drag start");
 });
 
@@ -48,6 +50,7 @@ articulo3.addEventListener("dragstart", e => {
  articulo3.addEventListener('dragend',(event)=>{
 
     console.log("drag End works!")
+   // articulo3.className += "dropp"
     //contendor.appendChild(articulo3)
     
   });
@@ -75,7 +78,15 @@ contendor.addEventListener("dragover", e => {
 })
 contendor.addEventListener("drop", e => {
     console.log("Drop")
-    const artcomprado = e.target;
-    contendor.appendChild(artcomprado)
+    //const artcomprado = document.getElementsByClassName("dropp").textContent;
+   // contendor.appendChild(artcomprado)
     //contendor.appendChild(articulo3)
+    const id = e.dataTransfer.getData("id");
+
+    if (id == "artid1"  || "artid2"  || "artid3")  {
+        console.log(id);
+    }
+
+
+
 })
