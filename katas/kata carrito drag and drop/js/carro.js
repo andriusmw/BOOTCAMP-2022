@@ -6,6 +6,15 @@ articulo.addEventListener("dragstart", e => {
     
     e.dataTransfer.setData("id", e.target.id);
     console.log("drag start");
+    //Transfiere el id al drop
+    let nombre = document.getElementById("nombrearticulo1").textContent;
+    e.dataTransfer.setData("Nombre", nombre);
+    console.log(nombre);
+    //Esto le pasa el nombre del artículo
+    let precio = document.getElementById("precio1").textContent;
+    e.dataTransfer.setData("Precio", precio);
+    console.log(precio);
+    //Esto le pasa el precio del artículo al drop
 
 });
 
@@ -82,12 +91,27 @@ contendor.addEventListener("drop", e => {
    // contendor.appendChild(artcomprado)
     //contendor.appendChild(articulo3)
     const id = e.dataTransfer.getData("id");
+    const nombre = e.dataTransfer.getData("Nombre");
+    const precio = e.dataTransfer.getData("Precio")
 
     if (id == "artid1"  || "artid2"  || "artid3")  {
         console.log(id);
+        console.log(nombre);
+        console.log(precio);
+        //Muestra por consola
         let articulocomprado = document.createElement("div")
         articulocomprado.textContent = id
+        //Crea elemento div y le pasa el textcontent del id
+        let nombrearticulocomprado = document.createElement("p")
+        nombrearticulocomprado.textContent = nombre;
+        //Crea elemento p y le pasa el textcontent del nombre
+        let precioarticulocomprado = document.createElement("p")
+        precioarticulocomprado.textContent = precio;
+        //Crea elemento p y le pasa el textcontent del precio
         contendor.appendChild(articulocomprado);
+        contendor.appendChild(nombrearticulocomprado);
+        contendor.appendChild(precioarticulocomprado);
+
     }
 
 
