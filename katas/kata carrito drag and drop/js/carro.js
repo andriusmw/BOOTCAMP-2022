@@ -43,7 +43,7 @@ articulo2.addEventListener("dragstart", e => {
 const articulo3 = document.getElementById("articulo3");
 
 articulo3.addEventListener("dragstart", e => {
-    
+  e.dataTransfer.setData("id", e.target.id);
     console.log("drag start");
 });
 
@@ -85,6 +85,9 @@ contendor.addEventListener("drop", e => {
 
     if (id == "artid1"  || "artid2"  || "artid3")  {
         console.log(id);
+        let articulocomprado = document.createElement("div")
+        articulocomprado.textContent = id
+        contendor.appendChild(articulocomprado);
     }
 
 
