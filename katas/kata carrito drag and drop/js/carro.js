@@ -20,11 +20,11 @@ articulo.addEventListener("dragstart", e => {
 
  articulo.addEventListener('dragend',(event)=>{
 
-    console.log("drag End works!")
+    //console.log("drag End works!")
   });
   articulo.addEventListener('drag',(event)=>{
 
-    console.log("drag  works!")
+   // console.log("drag  works!")
   });
   
 
@@ -35,15 +35,24 @@ const articulo2 = document.getElementById("articulo2");
 articulo2.addEventListener("dragstart", e => {
   e.dataTransfer.setData("id", e.target.id);
     console.log("drag start");
+    //Transfiere el id al drop
+    let nombre = document.getElementById("nombrearticulo2").textContent;
+    e.dataTransfer.setData("Nombre", nombre);
+    console.log(nombre);
+    //Esto le pasa el nombre del artículo
+    let precio = document.getElementById("precio2").textContent;
+    e.dataTransfer.setData("Precio", precio);
+    console.log(precio);
+    //Esto le pasa el precio del artículo al drop
 });
 
  articulo2.addEventListener('dragend',(event)=>{
 
-    console.log("drag End works!")
+    //console.log("drag End works!")
   });
   articulo2.addEventListener('drag',(event)=>{
 
-    console.log("drag  works!")
+  //  console.log("drag  works!")
   });
   
 
@@ -54,18 +63,27 @@ const articulo3 = document.getElementById("articulo3");
 articulo3.addEventListener("dragstart", e => {
   e.dataTransfer.setData("id", e.target.id);
     console.log("drag start");
+    //Transfiere el id al drop
+    let nombre = document.getElementById("nombrearticulo3").textContent;
+    e.dataTransfer.setData("Nombre", nombre);
+    console.log(nombre);
+    //Esto le pasa el nombre del artículo
+    let precio = document.getElementById("precio3").textContent;
+    e.dataTransfer.setData("Precio", precio);
+    console.log(precio);
+    //Esto le pasa el precio del artículo al drop
 });
 
  articulo3.addEventListener('dragend',(event)=>{
 
-    console.log("drag End works!")
+   // console.log("drag End works!")
    // articulo3.className += "dropp"
-    //contendor.appendChild(articulo3)
+   
     
   });
   articulo3.addEventListener('drag',(event)=>{
 
-    console.log("drag  works!")
+   // console.log("drag  works!")
   });
   
 
@@ -87,12 +105,11 @@ contendor.addEventListener("dragover", e => {
 })
 contendor.addEventListener("drop", e => {
     console.log("Drop")
-    //const artcomprado = document.getElementsByClassName("dropp").textContent;
-   // contendor.appendChild(artcomprado)
-    //contendor.appendChild(articulo3)
+    //Muestro Drop para saber que se ejecuta
     const id = e.dataTransfer.getData("id");
     const nombre = e.dataTransfer.getData("Nombre");
     const precio = e.dataTransfer.getData("Precio")
+    //Recibo los valores para id, nombre y precio, enviados en drag start
 
     if (id == "artid1"  || "artid2"  || "artid3")  {
         console.log(id);
