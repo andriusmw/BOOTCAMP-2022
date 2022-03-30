@@ -6,17 +6,17 @@ const articulo = document.getElementById("articulo1");
 articulo.addEventListener("dragstart", e => {
     
     e.dataTransfer.setData("id", e.target.id);
-    console.log("drag start");
+    //console.log("drag start");
     //Transfiere el id al drop
 
     let nombre = document.getElementById("nombrearticulo1").textContent;
     e.dataTransfer.setData("Nombre", nombre);
-    console.log(nombre);
+    //console.log(nombre);
     //Esto le pasa el nombre del artículo
 
     let precio = document.getElementById("precio1").textContent;
     e.dataTransfer.setData("Precio", precio);
-    console.log(precio);
+    //console.log(precio);
     //Esto le pasa el precio del artículo al drop
 
 });
@@ -37,17 +37,17 @@ const articulo2 = document.getElementById("articulo2");
 
 articulo2.addEventListener("dragstart", e => {
   e.dataTransfer.setData("id", e.target.id);
-    console.log("drag start");
+    //console.log("drag start");
     //Transfiere el id al drop
 
     let nombre = document.getElementById("nombrearticulo2").textContent;
     e.dataTransfer.setData("Nombre", nombre);
-    console.log(nombre);
+    //console.log(nombre);
     //Esto le pasa el nombre del artículo
 
     let precio = document.getElementById("precio2").textContent;
     e.dataTransfer.setData("Precio", precio);
-    console.log(precio);
+    //console.log(precio);
     //Esto le pasa el precio del artículo al drop
 });
 
@@ -68,17 +68,17 @@ const articulo3 = document.getElementById("articulo3");
 
 articulo3.addEventListener("dragstart", e => {
   e.dataTransfer.setData("id", e.target.id);
-    console.log("drag start");
+    //console.log("drag start");
     //Transfiere el id al drop
 
     let nombre = document.getElementById("nombrearticulo3").textContent;
     e.dataTransfer.setData("Nombre", nombre);
-    console.log(nombre);
+    //console.log(nombre);
     //Esto le pasa el nombre del artículo
 
     let precio = document.getElementById("precio3").textContent;
     e.dataTransfer.setData("Precio", precio);
-    console.log(precio);
+    //console.log(precio);
     //Esto le pasa el precio del artículo al drop
 });
 
@@ -97,15 +97,16 @@ articulo3.addEventListener("dragstart", e => {
 
 //------------------------------------------------------CONTENEDOR -----------------------------------------------------------//
 //----------------------------------------------------------------------------------------------------------------------------//
-
+var listaprecios = [];
+//array que va a guardar los precios
 
 const contendor = document.getElementById("carrito");
 
 contendor.addEventListener("dragenter", e => {
-    console.log("Drag Enter")
+    //console.log("Drag Enter")
 })
 contendor.addEventListener("dragleave", e => {
-    console.log("Drag Leave")
+    //console.log("Drag Leave")
 })
 contendor.addEventListener("dragover", e => {
     e.preventDefault(); //prevee su ejecución por defecto para que funcione Drop
@@ -142,6 +143,10 @@ contendor.addEventListener("drop", e => {
         contendor.appendChild(nombrearticulocomprado);
         contendor.appendChild(precioarticulocomprado);
 
+        precio = parseInt(precio);
+       let precioapushear = precio
+       listaprecios.push(precioapushear);
+
     }
 
 //-------------------------------------------------CALCULAR TOTAL  -----------------------------------------------------------//
@@ -152,21 +157,37 @@ total = parseInt(total);
 const calculadordetotal = document.getElementById("totalbutton");
 calculadordetotal.addEventListener("click", e => {
   Calculartotal();
+  console.log("el total es: " + total);
+    total = 0;
+    console.log("total tras sumar: " + total)
     })
 
 function Calculartotal() {
 
-  const precioasalirentotal = document.querySelectorAll(".preciodrop")
-   precioasalirentotal.forEach(artcomprado => {
+ 
+  console.log("listaprecios: " + listaprecios)
+  
+  let i= 0;
+  while ( i < listaprecios.length  ) {
+    total = total + listaprecios[i]
+    console.log('se ha ejecutado: '+  i + " veces");
+   i++
+  }
+/*
+  precioasalirentotal.forEach(element => {
+    total = total + precio;
+    console.log("precio total: " + total)
+    total = 0;
+  }
+  );
 
-          precio = parseInt(precio);
-          //convierte a int (numero)
-           total =  total + precio ;    
-    });
-    console.log("el total es: " + total);
-    this.total = 0;
-    //Problema a la hora del orden de sumar y de reiniciar las variables, pero suma y muestra total
-    //queda pendiente ver cómo lo suma y como reinicia el valor
+  total = 0;
+            */
+    
+    
+ 
+    
+   
 }
 
 
