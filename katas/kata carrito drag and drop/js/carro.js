@@ -99,6 +99,7 @@ articulo3.addEventListener("dragstart", e => {
 //----------------------------------------------------------------------------------------------------------------------------//
 var listaprecios = [];
 //array que va a guardar los precios
+//lo creo aquí para que esté a la altura de la "raiz del scope y sea accesible desde el resto de scopes anidados "
 
 const contendor = document.getElementById("carrito");
 
@@ -146,7 +147,7 @@ contendor.addEventListener("drop", e => {
         precio = parseInt(precio);
        let precioapushear = precio
        listaprecios.push(precioapushear);
-
+        //paso el valor NUMÉRICO del precio del artículo añadido al array listaprecios para consultarlo después
     }
 
 //-------------------------------------------------CALCULAR TOTAL  -----------------------------------------------------------//
@@ -154,18 +155,11 @@ contendor.addEventListener("drop", e => {
 let total = 0;
 total = parseInt(total);
 
-const calculadordetotal = document.getElementById("totalbutton");
-calculadordetotal.addEventListener("click", e => {
-  Calculartotal();
-  console.log("el total es: " + total);
-  //Aquí tendría que crear un div para que muestre el total
-  
-    total = 0;
-    console.log("total tras sumar: " + total)
-   
-    })
+document.getElementById("totalbutton").addEventListener("click", Calculartotal);
 
-function Calculartotal() {
+
+
+function Calculartotal(){
 
  
   console.log("listaprecios: " + listaprecios)
@@ -178,6 +172,12 @@ function Calculartotal() {
     console.log('se ha ejecutado: '+  i + " veces");
    i++
   }
+
+       console.log("el total es: " + total);
+  //Aquí tendría que crear un div para que muestre el total
+  
+       total = 0;
+        console.log("total tras sumar: " + total)
 
     //arriba he puesto que cada vez que se hace drop, el valor de precio entra a una array
     //llamado listaprecios. Para luego aquí abajo recorrer el array lista precios, tantas
