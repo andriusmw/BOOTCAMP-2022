@@ -158,8 +158,11 @@ const calculadordetotal = document.getElementById("totalbutton");
 calculadordetotal.addEventListener("click", e => {
   Calculartotal();
   console.log("el total es: " + total);
+  //Aquí tendría que crear un div para que muestre el total
+  
     total = 0;
     console.log("total tras sumar: " + total)
+   
     })
 
 function Calculartotal() {
@@ -169,7 +172,9 @@ function Calculartotal() {
   
   let i= 0;
   while ( i < listaprecios.length  ) {
+    console.log("precio a sumar en iteracción " + i +  "-" + listaprecios[i] )
     total = total + listaprecios[i]
+    console.log("total en interación" + i + "= " + total)
     console.log('se ha ejecutado: '+  i + " veces");
    i++
   }
@@ -178,6 +183,12 @@ function Calculartotal() {
     //llamado listaprecios. Para luego aquí abajo recorrer el array lista precios, tantas
     //veces como elementos haya en el array y a cada iteración, por cada elemento vaya acumulando
     //el precio en la variable total y cuando termina muestra el total
+
+    //Se ejecuta la función Calculartotal() tantas veces como elementos haya en el carrito. 
+    //entonces, calcula el precio 3 veces y no se suman esos 3 totales entre sí, solamente
+    //porque en la linea 163 ,establezco el total a 0 por si se repite o añade o elimina elementos en el futuro
+    //que no quite un elemento y se quede el precio puesto.
+    
     
  
     
