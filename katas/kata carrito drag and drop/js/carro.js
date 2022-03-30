@@ -173,17 +173,11 @@ function Calculartotal() {
     console.log('se ha ejecutado: '+  i + " veces");
    i++
   }
-/*
-  precioasalirentotal.forEach(element => {
-    total = total + precio;
-    console.log("precio total: " + total)
-    total = 0;
-  }
-  );
 
-  total = 0;
-            */
-    
+    //arriba he puesto que cada vez que se hace drop, el valor de precio entra a una array
+    //llamado listaprecios. Para luego aquí abajo recorrer el array lista precios, tantas
+    //veces como elementos haya en el array y a cada iteración, por cada elemento vaya acumulando
+    //el precio en la variable total y cuando termina muestra el total
     
  
     
