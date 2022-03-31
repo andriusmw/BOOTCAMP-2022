@@ -192,6 +192,10 @@ document.getElementById("totalbutton").addEventListener("click", Calculartotal);
 
 function Calculartotal(){
 
+  let total = 0;
+  total = parseInt(total);
+  //seguramente tendré que reiniciar el array listprecios tras calculart un total o hacer que cuando se borra, se saque del array ese valor
+  //mirar slice o sacar de array para llamarlo cuando se borre un elementop en borrar 
  
   console.log("listaprecios: " + listaprecios)
   
