@@ -157,7 +157,12 @@ contendor.addEventListener("drop", e => {
 
          posicion = posicion + 1
         addDeleteBtn() //LLAMA A LA FUNCIÓN PARA CREE EL BOTÓN DE BORRAR
-/*--------------------------------FUNCION DELETE BUTTON -------------------------*/
+
+
+
+/*--------------------------------FUNCION DELETE BUTTON DENTRO DEL DROP ------------------- -------------------------*/
+//---------------------------------------------------------------------------------------------------------------------
+
         function addDeleteBtn() {
           const deleteBtn = document.createElement("button");
         
@@ -165,10 +170,10 @@ contendor.addEventListener("drop", e => {
           deleteBtn.className = "btn-delete";
           articulocomprado.appendChild(deleteBtn);
         
-
+          //Igual que iba añadiendo precios al array listaprecios con cada drop, ahora, cada vez que genero el botón de borrar
+          //añado el valor del precio al array preciosaborrar, como coincide con el array listaprecios, cuando recorra este
+          //podré sacar la posición que debo BORRAR EN EL ARRAY LISTAPRECIOS. 
           let precioaborrar = e.dataTransfer.getData("Precio")
-
-
           precioaborrar = parseInt(precioaborrar);
           let precioasacar = precioaborrar
           listapreciosaborrar.push(precioasacar);
@@ -179,13 +184,15 @@ contendor.addEventListener("drop", e => {
           deleteBtn.addEventListener("click", (e) => {
             const item = e.target.parentElement;
             contendor.removeChild(item);
-            //mirar slice o sacar de array para llamarlo cuando se borre un elementop en borrar 
+            //Hasta aquí hemos borrado el elemento gráfico, pero falta borrarlo del array de precios 
+            //Para ello usamos el bucle de abajo y los métodos .splice en el array listaprecios y en listapreciosaborrar
            
               j = 0;
             while (j <= listapreciosaborrar.length){
                if (listapreciosaborrar[j] == precioaborrar){
                     console.log("indice donde está el elemento a borrar: " + j)
-                    //return console.log("muestro el return, indice: " + j)
+                    //Cuando el valor de la posición del array es igual a precioaborrar, se para , sale y le pasa
+                    //la posición, osea "j" al splice de abajo en listaprecios para saber qué posición del array coger
                     break;
                } else {
                  j++
@@ -194,14 +201,17 @@ contendor.addEventListener("drop", e => {
 
 
             }
-           //lo de arriba funciona, me dice el indice, pero abajo no borra
+           //lo de arriba me dice el indice a borrar, en splice. 
           
             listaprecios.splice(j, 1);
            //¿cómo le indico el indice? pasándoselo de recorrer el array anterior, donde listapreciosJ es = al precioaborrar
-           console.log("elemento eliminado:" + listaprecios[j] );
            console.log("lista de precios tras borrar: " + listaprecios);
           
-           //si que le llega el valor correcto del indice accede al valor, pero NO LO BORRA ¿POR QUÉ?
+           //tras borrar de la lista de precios, hay que borrar también de la lista de precios a borrar para que la próxima
+           //vez que se le de a borrar el array que recorra sea el mismo que el de lista precios.
+           listapreciosaborrar.splice(j, 1);
+           //¿cómo le indico el indice? pasándoselo de recorrer el array anterior, donde listapreciosJ es = al precioaborrar
+           console.log("lista de precios tras borrar: " + listapreciosaborrar);
            
         
            
