@@ -183,9 +183,19 @@ function Calculartotal(){
 
        console.log("el total es: " + total);
   //Aquí tendría que crear un div para que muestre el total
+           let divtotal = document.createElement("div")
+           divtotal.className += "divtotal"
+           let totalresultado = document.createElement("p")
+           totalresultado.textContent = total;
+           divtotal.appendChild(totalresultado);
+           const totalcontendor = document.getElementById("total");
+           totalcontendor.appendChild(divtotal);
+    //Crea elemento div divtotal, le pasa la clase divtotal para darle estilos. Crea elemento p, le pasa el texto de la variable total
+    //lo metemos todo dentro del div donde va a mostrar el resultado con appenchild.
   
        total = 0;
         console.log("total tras sumar: " + total)
+      }      
 
     //arriba he puesto que cada vez que se hace drop, el valor de precio entra a una array
     //llamado listaprecios. Para luego aquí abajo recorrer el array lista precios, tantas
@@ -203,7 +213,4 @@ function Calculartotal(){
     //como clicks y por eso volvía a llamar a la función calculartotal()
     //(pa matarme ...)
    
- 
-    
    
-}
