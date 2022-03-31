@@ -196,11 +196,12 @@ contendor.addEventListener("drop", e => {
             }
            //lo de arriba funciona, me dice el indice, pero abajo no borra
           
-           let elementoEliminado = listaprecios.splice(listaprecios[j], 1)
+            listaprecios.splice(j, 1);
            //¿cómo le indico el indice? pasándoselo de recorrer el array anterior, donde listapreciosJ es = al precioaborrar
-           console.log("elemento eliminado:" + elementoEliminado)
-           console.log("listaprecios[j] = " + listaprecios[j] )
-           //si que le llega el valor correcto del indice a
+           console.log("elemento eliminado:" + listaprecios[j] );
+           console.log("lista de precios tras borrar: " + listaprecios);
+          
+           //si que le llega el valor correcto del indice accede al valor, pero NO LO BORRA ¿POR QUÉ?
            
         
            
