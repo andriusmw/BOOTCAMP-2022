@@ -141,13 +141,36 @@ contendor.addEventListener("drop", e => {
         precioarticulocomprado.className += "preciodrop"
 
         contendor.appendChild(articulocomprado);
-        contendor.appendChild(nombrearticulocomprado);
-        contendor.appendChild(precioarticulocomprado);
+        articulocomprado.appendChild(nombrearticulocomprado);
+        articulocomprado.appendChild(precioarticulocomprado);
 
         precio = parseInt(precio);
        let precioapushear = precio
        listaprecios.push(precioapushear);
         //paso el valor NUMÉRICO del precio del artículo añadido al array listaprecios para consultarlo después
+
+        addDeleteBtn() //LLAMA A LA FUNCIÓN PARA CREE EL BOTÓN DE BORRAR
+/*--------------------------------FUNCION DELETE BUTTON -------------------------*/
+        function addDeleteBtn() {
+          const deleteBtn = document.createElement("button");
+        
+          deleteBtn.textContent = "X";
+          deleteBtn.className = "btn-delete";
+          articulocomprado.appendChild(deleteBtn);
+        
+          deleteBtn.addEventListener("click", (e) => {
+            const item = e.target.parentElement;
+            contendor.removeChild(item);
+            
+        
+           
+          });
+        
+          return deleteBtn;
+        }
+
+       
+/**----------------------------------------------------------------------------------- */
     }
 
 
@@ -193,7 +216,7 @@ function Calculartotal(){
     //Crea elemento div divtotal, le pasa la clase divtotal para darle estilos. Crea elemento p, le pasa el texto de la variable total
     //lo metemos todo dentro del div donde va a mostrar el resultado con appenchild.
   
-       total = 0;
+         total = 0;
         console.log("total tras sumar: " + total)
       }      
 
