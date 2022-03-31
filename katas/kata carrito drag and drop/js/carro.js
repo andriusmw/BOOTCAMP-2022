@@ -150,8 +150,16 @@ contendor.addEventListener("drop", e => {
         //paso el valor NUMÉRICO del precio del artículo añadido al array listaprecios para consultarlo después
     }
 
+
+
+
+})
+
 //-------------------------------------------------CALCULAR TOTAL  -----------------------------------------------------------//
 //----------------------------------------------------------------------------------------------------------------------------//
+
+
+
 let total = 0;
 total = parseInt(total);
 
@@ -188,12 +196,14 @@ function Calculartotal(){
     //entonces, calcula el precio 3 veces y no se suman esos 3 totales entre sí, solamente
     //porque en la linea 163 ,establezco el total a 0 por si se repite o añade o elimina elementos en el futuro
     //que no quite un elemento y se quede el precio puesto.
-    
-    
+
+    //ARREGLADO!!!!! 
+    //El fallo era que todo el código de calcular el total estaba dentro de los { } del código del contenedor, y por
+    //tanto me contaba las veces que hacía drop como clicks y cuando yo le hacía click se enviaban todos los drops acumulados
+    //como clicks y por eso volvía a llamar a la función calculartotal()
+    //(pa matarme ...)
+   
  
     
    
 }
-
-
-})
