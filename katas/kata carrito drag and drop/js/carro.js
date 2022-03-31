@@ -100,6 +100,12 @@ articulo3.addEventListener("dragstart", e => {
 var listaprecios = [];
 //array que va a guardar los precios
 //lo creo aquí para que esté a la altura de la "raiz del scope y sea accesible desde el resto de scopes anidados "
+var posicion = 0;
+posicion = parseInt(posicion);
+
+var listapreciosaborrar = []
+//Creo otro array vacío con los precios a borrar
+//para luego comparar uno con el otro para saber qué elemento borrar
 
 const contendor = document.getElementById("carrito");
 
@@ -149,6 +155,7 @@ contendor.addEventListener("drop", e => {
        listaprecios.push(precioapushear);
         //paso el valor NUMÉRICO del precio del artículo añadido al array listaprecios para consultarlo después
 
+         posicion = posicion + 1
         addDeleteBtn() //LLAMA A LA FUNCIÓN PARA CREE EL BOTÓN DE BORRAR
 /*--------------------------------FUNCION DELETE BUTTON -------------------------*/
         function addDeleteBtn() {
@@ -158,10 +165,43 @@ contendor.addEventListener("drop", e => {
           deleteBtn.className = "btn-delete";
           articulocomprado.appendChild(deleteBtn);
         
+
+          let precioaborrar = e.dataTransfer.getData("Precio")
+
+
+          precioaborrar = parseInt(precioaborrar);
+          let precioasacar = precioaborrar
+          listapreciosaborrar.push(precioasacar);
+
+          console.log("array precios a borrar: " + listapreciosaborrar)
+
+
           deleteBtn.addEventListener("click", (e) => {
             const item = e.target.parentElement;
             contendor.removeChild(item);
-            
+            //mirar slice o sacar de array para llamarlo cuando se borre un elementop en borrar 
+           
+              j = 0;
+            while (j <= listapreciosaborrar.length){
+               if (listapreciosaborrar[j] == precioaborrar){
+                    console.log("indice donde está el elemento a borrar: " + j)
+                    //return console.log("muestro el return, indice: " + j)
+                    break;
+               } else {
+                 j++
+                 console.log("está en el else, " + j + "veces")
+               }
+
+
+            }
+           //lo de arriba funciona, me dice el indice, pero abajo no borra
+          
+           let elementoEliminado = listaprecios.splice(listaprecios[j], 1)
+           //¿cómo le indico el indice? pasándoselo de recorrer el array anterior, donde listapreciosJ es = al precioaborrar
+           console.log("elemento eliminado:" + elementoEliminado)
+           console.log("listaprecios[j] = " + listaprecios[j] )
+           //si que le llega el valor correcto del indice a
+           
         
            
           });
