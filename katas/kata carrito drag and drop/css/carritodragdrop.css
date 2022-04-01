@@ -5,3 +5,21 @@
 .carrito {
     background-color: chartreuse;
 }
+
+    /*---- div del articulo comprado, el que aparece en el drop  --*/
+.articulocomprado {
+    display: flex;
+}
+
+.articulocompradonombre {
+    float: left;
+    
+}
+
+.preciodrop {
+    float: left;
+}
+
+.btn-delete {
+    float: left;
+}

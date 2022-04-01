@@ -134,10 +134,12 @@ contendor.addEventListener("drop", e => {
         //Muestra por consola
 
         let articulocomprado = document.createElement("div")
-        articulocomprado.textContent = id
-        //Crea elemento div y le pasa el textcontent del id
+        articulocomprado.className += "articulocomprado"
+      
+        //Crea elemento div y le pone clase
 
         let nombrearticulocomprado = document.createElement("p")
+        nombrearticulocomprado.className += "articulocompradonombre"
         nombrearticulocomprado.textContent = nombre;
         //Crea elemento p y le pasa el textcontent del nombre
 
