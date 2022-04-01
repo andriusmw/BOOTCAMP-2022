@@ -1,9 +1,27 @@
+body {
+    background-image: url(../images/supermarket.jpg);
+    background-size: cover;
+}
+
+
+.menucomprar {
+    background-color: burlywood;
+    max-width: 25em;
+}
+
+
 .articulo {
     background-color: aqua;
+    display: inline-block;
+    margin-left: 1em;
+    min-width: 6em;
+    max-width: 6em;
+    margin-bottom: 1em;
 }
 
 .carrito {
     background-color: chartreuse;
+    max-width: 15em;
 }
 
     /*---- div del articulo comprado, el que aparece en el drop  --*/
@@ -18,8 +36,10 @@
 
 .preciodrop {
     float: left;
+    padding-left: 2em;
 }
 
 .btn-delete {
     float: left;
+    margin-left: 2em;
 }
