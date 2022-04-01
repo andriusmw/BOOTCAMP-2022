@@ -1,12 +1,29 @@
-body {
+/*body {
     background-image: url(../images/supermarket.jpg);
     background-size: cover;
+}*/
+
+.bienvenida{
+    text-align: center;
+}
+
+.fondo {
+    width: 100%;
+    height: 100%;
+    position: fixed;
 }
 
 
 .menucomprar {
     background-color: burlywood;
     max-width: 25em;
+    position: absolute;
+    margin-top: 2em;
+    border: 2px solid #000;
+}
+
+.fruta {
+    max-width: 4em;
 }
 
 
